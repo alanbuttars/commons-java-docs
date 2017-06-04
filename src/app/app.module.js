@@ -11,6 +11,7 @@ var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./home/home.component");
 var header_component_1 = require("./header/header.component");
+var nav_component_1 = require("./nav/nav.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,7 +26,8 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             home_component_1.HomeComponent,
-            header_component_1.HeaderComponent
+            header_component_1.HeaderComponent,
+            nav_component_1.NavComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     })
