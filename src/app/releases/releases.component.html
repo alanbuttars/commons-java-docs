@@ -1,0 +1,20 @@
+<div *ngIf="release">
+  <article class="uk-article">
+    <h1 class="uk-article-title">
+      Release {{release.name}}
+    </h1>
+
+    <p>{{release.date}}</p>
+
+    <h3>Notes</h3>
+    <p>{{release.notes}}</p>
+
+    <h3>Reported bugs</h3>
+    <p>{{release.bugs}}</p>
+
+    <hr/>
+
+    <h2>Installation</h2>
+    <app-release [release]="release"></app-release>
+  </article>
+</div>
