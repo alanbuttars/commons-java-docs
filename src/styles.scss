@@ -1,0 +1,15 @@
+$icon-font-path:    "assets/bower_components/uikit/fonts" !default;
+$utility-container-large-max-width:              100% !default;
+
+$base-pre-font-size:                             inherit !default;
+$base-pre-padding:                               0px 10px 0px 10px  !default;
+$base-pre-background:                            transparent !default;
+$base-pre-border:                                1px solid gray !default;
+
+$base-code-font-size:                            inherit !default;
+
+@import "assets/bower_components/uikit/scss/uikit-mixins.scss";
+@import "assets/bower_components/uikit/scss/uikit-variables.scss";
+@import "assets/bower_components/uikit/scss/uikit.scss";
+
+@import "assets/bower_components/uikit/scss/core/icon.scss";
