@@ -71,8 +71,15 @@ $article-divider-border:                         #ddd !default;
 .uk-article > :last-child { margin-bottom: 0; }
 
 .uk-article {
-  margin-left: $article-margin-left;
-  margin-right: $article-margin-right;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+@media (min-width: $breakpoint-medium) {
+  .uk-article {
+    margin-left: $article-margin-left;
+    margin-right: $article-margin-right;
+  }
 }
 /*
  * Vertical gutter for articles

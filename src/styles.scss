@@ -3,6 +3,55 @@ $base-heading-font-family:                       "Lora", sans-serif !default;
 $base-code-font-family:                          Consolas, monospace, serif !default;
 $navbar-nav-font-family:                         $base-body-font-family;
 
+/*
+$color-1: #dddfd4;
+$color-2: #fae596;
+$color-3: #3fb0ac;
+$color-4: #173e43;
+*/
+
+/*
+$color-1: #e8edf3;
+$color-2: #e6cf8b;
+$color-3: #b56969;
+$color-4: #22264b;
+*/
+
+/*
+$color-1: #e6af4b;
+$color-2: #e05038;
+$color-3: #f2cbbc;
+$color-4: #334431;
+*/
+
+/*
+$color-1: #ede9ce;
+$color-2: #c7ad88;
+$color-3: #64706c;
+$color-4: #935347;
+*/
+
+$color-1: #b5b5b7;
+$color-2: #f2b632;
+$color-3: #677077;
+$color-4: #252839;
+
+$navbar-nav-height:           50px !default;
+$navbar-background:           $color-1 !default;
+
+$nav-side-hover-background:   $color-1 !default;
+$nav-side-active-background:  $color-3 !default;
+
+$base-link-color:             $color-3 !default;
+$base-link-hover-color:       $color-4 !default;
+
+$tab-color:                   $color-3 !default;
+$tab-hover-color:             $color-4 !default;
+$tab-hover-background:        $color-1 !default;
+
+$base-code-color:             $color-4 !default;
+$base-heading-color:          $color-4 !default;
+
 $icon-font-path:    "assets/bower_components/uikit/fonts" !default;
 $utility-container-large-max-width:              100% !default;
 
@@ -22,6 +71,7 @@ article > {
     @extend .uk-margin-bottom;
   }
   h2:before {
+    @extend .uk-hidden-small;
     content: "# ";
     margin-left: -28px;
   }
