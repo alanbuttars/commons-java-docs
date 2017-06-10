@@ -1,12 +1,40 @@
 $icon-font-path:    "assets/bower_components/uikit/fonts" !default;
 $utility-container-large-max-width:              100% !default;
 
+$tab-border-width:                               1px !default;
+$tab-active-border:                              #ddd !default;
+
 $base-pre-font-size:                             inherit !default;
 $base-pre-padding:                               0px 10px 0px 10px  !default;
 $base-pre-background:                            transparent !default;
-$base-pre-border:                                1px solid gray !default;
+$base-pre-border:                                solid $tab-border-width $tab-active-border !default;
 
 $base-code-font-size:                            inherit !default;
+
+article > {
+  h2 {
+    @extend .uk-margin-large-bottom;
+  }
+  h3 {
+    @extend .uk-margin-bottom;
+  }
+}
+
+ul.uk-switcher {
+  border-left: solid $tab-border-width $tab-active-border;
+  border-right: solid $tab-border-width $tab-active-border;
+  border-bottom: solid $tab-border-width $tab-active-border;
+  pre {
+    border: none;
+  }
+}
+
+pre {
+  border: solid $tab-border-width $tab-active-border;
+  code {
+    //font-family: "Sans Mono", "Consolas", "Courier", monospace;
+  }
+}
 
 @import "assets/bower_components/uikit/scss/uikit-mixins.scss";
 @import "assets/bower_components/uikit/scss/uikit-variables.scss";

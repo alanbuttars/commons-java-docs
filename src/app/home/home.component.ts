@@ -1,4 +1,4 @@
-import { Component, OnInit }      from '@angular/core';
+import { Component }      from '@angular/core';
 
 import { ReleaseService } from './../releases/release.service';
 import { Release } from './../releases/release';
@@ -7,17 +7,5 @@ import { Release } from './../releases/release';
   selector: 'app-home',
   templateUrl: './home.component.html'
 })
-export class HomeComponent implements OnInit {
-  releases: Release[];
-
-  constructor(
-    private releaseService: ReleaseService,
-  ) { }
-
-  ngOnInit(): void {
-    this.releaseService.getReleases()
-      .then(releases => {
-        this.releases = releases;
-      });
-  }
+export class HomeComponent {
 }

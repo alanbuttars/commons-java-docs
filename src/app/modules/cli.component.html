@@ -40,6 +40,8 @@ else {
 }'}}
       </code></pre>
 
+      <hr/>
+
       <h2 id="evaluate">Evaluating process output</h2>
       <p>
         When <code>Processes.execute(CommandLineRequest)</code> is called, this module maps the info and error streams of the process to a <code>CommandLineResponse</code>.
@@ -139,6 +141,8 @@ CommandLineRequest request = new CommandLineRequestBuilder()//
   .build("/path/to/register.sh --first Alan --last Buttars");
       '}}</code></pre>
 
+      <hr/>
+
       <h2 id="timeout">Interrupting on timeout</h2>
       <p>
         By default, processes are allowed to run until they exit or are interrupted. If you'd like to put a time restraint on the process, you can do so easily:
@@ -167,6 +171,8 @@ Non-interruption exception thrown: false
 Interruption message: Process interrupted after 5000 millis
       </code></pre>
 
+      <hr/>
+
       <h2 id="interrupt">Interrupting on failure</h2>
       <p>
         By default, processes are allowed to run until they exit or are interrupted. But you may want the process to exit as soon as it has been evaluated as a failure (which may occur well before the script actually concludes).
@@ -193,6 +199,8 @@ Failed: true
 Interrupted: true
 Non-interruption exception thrown: false
       </code></pre>
+
+      <hr/>
 
       <h2 id="arguments">Wrapping arguments</h2>
       <p>

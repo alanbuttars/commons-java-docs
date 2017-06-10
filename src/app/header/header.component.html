@@ -1,14 +1,7 @@
 <!-- Mobile Navigation -->
 <div id="offcanvas-nav" class="uk-offcanvas">
 	<div class="uk-offcanvas-bar">
-		<ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav>
-			<li>
-				<a href="javascript:;">Home</a>
-			</li>
-			<li>
-				<a href="http://alanbuttars.com" target="_blank">Author</a>
-			</li>
-		</ul>
+		<app-nav [clazz]="'uk-nav uk-nav-offcanvas uk-nav-parent-icon'"></app-nav>
 	</div>
 </div>
 
@@ -16,8 +9,17 @@
 	<ul id="top" class="uk-navbar-nav">
 		<a class="uk-navbar-toggle" data-uk-offcanvas="{target: '#offcanvas-nav'}"></a>
 	</ul>
-	<div class="uk-navbar-content uk-navbar-center">
+	<div class="uk-navbar-content">
 		<strong>{{title}}</strong>
+	</div>
+	<div class="uk-navbar-flip">
+		<ul class="uk-navbar-nav">
+			<ul class="uk-navbar-nav">
+				<li>
+					<a href="http://alanbuttars.com" target="_blank">Author</a>
+				</li>
+			</ul>
+		</ul>
 	</div>
 </nav>
 

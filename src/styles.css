@@ -1,4 +1,14 @@
 @charset "UTF-8";
+ul.uk-switcher {
+  border-left: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+  border-bottom: solid 1px #ddd; }
+  ul.uk-switcher pre {
+    border: none; }
+
+pre {
+  border: solid 1px #ddd; }
+
 /* ========================================================================
    Component: Base
  ========================================================================== */
@@ -331,7 +341,7 @@ pre {
   tab-size: 4;
   /* 1 */
   overflow: auto;
-  border: 1px solid gray; }
+  border: solid 1px #ddd; }
 
 /* Selection pseudo-element
  ========================================================================== */
@@ -7938,7 +7948,7 @@ a.uk-thumbnail:focus {
 .uk-margin-top {
   margin-top: 15px !important; }
 
-.uk-margin-bottom {
+.uk-margin-bottom, article > h3 {
   margin-bottom: 15px !important; }
 
 .uk-margin-left {
@@ -7959,7 +7969,7 @@ a.uk-thumbnail:focus {
 .uk-margin-large-top {
   margin-top: 50px !important; }
 
-.uk-margin-large-bottom {
+.uk-margin-large-bottom, article > h2 {
   margin-bottom: 50px !important; }
 
 .uk-margin-large-left {

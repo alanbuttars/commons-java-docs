@@ -2,23 +2,7 @@
   <div class="uk-grid">
     <div class="uk-hidden-small uk-width-medium-1-4 uk-width-large-1-5">
       <div data-uk-sticky="{top: 10}">
-        <ul class="uk-nav uk-nav-side" >
-          <li class="uk-nav-header">Getting started</li>
-          <li routerLinkActive="uk-active"><a routerLink="/introduction">Introduction</a></li>
-          <li routerLinkActive="uk-active"><a routerLink="/installation">Installation</a></li>
-
-          <li class="uk-nav-divider"></li>
-          <li class="uk-nav-header">Modules</li>
-          <li routerLinkActive="uk-active"><a routerLink="/commons-cli">commons-cli</a></li>
-          <li routerLinkActive="uk-active"><a routerLink="/commons-compress">commons-compress</a></li>
-          <li routerLinkActive="uk-active"><a routerLink="/commons-config">commons-config</a></li>
-
-          <li class="uk-nav-divider"></li>
-          <li class="uk-nav-header">Releases</li>
-          <li routerLinkActive="uk-active" *ngFor="let release of releases">
-            <a routerLink="/releases/{{release.name}}">{{release.name}}</a>
-          </li>
-        </ul>
+        <app-nav [clazz]="'uk-nav uk-nav-side'"></app-nav>
       </div>
     </div>
 
