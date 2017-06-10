@@ -27,6 +27,8 @@
 // ========================================================================
 
 $article-margin-top:                             25px !default;
+$article-margin-left:                            20px !default;
+$article-margin-right:                           20px !default;
 
 $article-title-font-size:                        36px !default;
 $article-title-line-height:                      42px !default;
@@ -68,11 +70,17 @@ $article-divider-border:                         #ddd !default;
 
 .uk-article > :last-child { margin-bottom: 0; }
 
+.uk-article {
+  margin-left: $article-margin-left;
+  margin-right: $article-margin-right;
+}
 /*
  * Vertical gutter for articles
  */
 
-.uk-article + .uk-article { margin-top: $article-margin-top; }
+.uk-article + .uk-article {
+  margin-top: $article-margin-top;
+}
 
 
 /* Sub-object `uk-article-title`

@@ -10,6 +10,10 @@
         compression and decompression actions on a bunch of different file types. This library attempts to make that API very simple to use without sacrificing its extensibility.
       </p>
 
+      <p>
+        GitHub source: <a href="https://github.com/alanbuttars/commons-java/tree/master/commons-compress" target="_blank">https://github.com/alanbuttars/commons-java/tree/master/commons-compress</a>.
+      </p>
+
       <hr/>
 
       <h2 id="supported">Supported file types</h2>
@@ -41,30 +45,27 @@
 
       <hr/>
 
-      <div>
-        <div>
-          <h2 class="uk-margin-bottom-remove" id="7z">7z</h2>
-          <p class="uk-margin-top-remove">
-            See <a href="https://en.wikipedia.org/wiki/7z">https://en.wikipedia.org/wiki/7z</a>.
-          </p>
-        </div>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-7z'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-7z" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="7z">7z</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/7z">https://en.wikipedia.org/wiki/7z</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-7z'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-7z" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test");
 File destination = new File("test.7z");
 Compress.directory(source).with7z().to(destination);
 
 List<? extends SevenZMethodConfiguration> contentMethods = Collections.singletonList(new SevenZMethodConfiguration(SevenZMethod.LZMA));
 Compress.directory(source).with7z().andContentMethods(contentMethods).to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.7z");
 File destination = new File("test");
 Decompress.archive(source).with7z().to(destination);
@@ -72,25 +73,23 @@ Decompress.archive(source).with7z().to(destination);
 Decompress.archive(source).with7z()//
   .andDecryptWithPassword("password123!".getBytes())//
   .to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="ar">ar</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Ar_(Unix)">https://en.wikipedia.org/wiki/Ar_(Unix)</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-ar'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-ar" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="ar">ar</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Ar_(Unix)">https://en.wikipedia.org/wiki/Ar_(Unix)</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-ar'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-ar" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test");
 File destination = new File("test.a");
 Compress.directory(source).withAr().to(destination);
@@ -101,55 +100,51 @@ Compress.directory(source).withAr()//
   .andLongFileMode(ArArchiveOutputStream.LONGFILE_ERROR)//
   .andMode(33188)//
   .to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.a");
 File destination = new File("test");
 Decompress.archive(source).withAr().to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="arj">arj</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/ARJ">https://en.wikipedia.org/wiki/ARJ</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-arj'}">
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-arj" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="arj">arj</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/ARJ">https://en.wikipedia.org/wiki/ARJ</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-arj'}">
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-arj" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test.arj");
 File destination = new File("test");
 Decompress.archive(source).withArj().to(destination);
 
 Decompress.archive(source).withArj().andEncoding("UTF16").to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="bzip2">bzip2</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Bzip2">https://en.wikipedia.org/wiki/Bzip2</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-bzip2'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-bzip2" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="bzip2">bzip2</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Bzip2">https://en.wikipedia.org/wiki/Bzip2</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-bzip2'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-bzip2" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt");
 File destination = new File("test.txt.bz2");
 Compress.file(source).withBzip2().to(destination);
@@ -157,10 +152,10 @@ Compress.file(source).withBzip2().to(destination);
 Compress.file(source).withBzip2()//
   .andBlockSize(BZip2Constants.MIN_BLOCKSIZE)//
   .to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt.bz2");
 File destination = new File("test.txt");
 Decompress.compressedFile(source).withBzip2().to(destination);
@@ -168,25 +163,23 @@ Decompress.compressedFile(source).withBzip2().to(destination);
 Decompress.compressedFile(source).withBzip2()//
   .andDecompressConcatenated(true)//
   .to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="cpio">cpio</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Cpio">https://en.wikipedia.org/wiki/Cpio</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-cpio'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-cpio" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="cpio">cpio</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Cpio">https://en.wikipedia.org/wiki/Cpio</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-cpio'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-cpio" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test");
 File destination = new File("test.cpio");
 Compress.directory(source).withCpio().to(destination);
@@ -196,10 +189,10 @@ Compress.directory(source).withCpio()//
   .andEncoding(CharsetNames.UTF_16)//
   .andFormat(CpioConstants.FORMAT_NEW_CRC)//
   .to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt.cpio");
 File destination = new File("test.txt");
 Decompress.archive(source).withCpio().to(destination);
@@ -208,25 +201,23 @@ Decompress.archive(source).withCpio()//
   .andBlockSize(CpioConstants.BLOCK_SIZE)//
   .andEncoding(CharsetNames.UTF_16)//
   .to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="deflate">deflate</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/DEFLATE">https://en.wikipedia.org/wiki/DEFLATE</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-deflate'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-deflate" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="deflate">deflate</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/DEFLATE">https://en.wikipedia.org/wiki/DEFLATE</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-deflate'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-deflate" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt");
 File destination = new File("test.txt.deflate");
 Compress.file(source).withDeflate().to(destination);
@@ -234,10 +225,10 @@ Compress.file(source).withDeflate().to(destination);
 Compress.file(source).withDeflate()//
   .andParameters(new DeflateParameters())//
   .to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt.deflate");
 File destination = new File("test.txt");
 Decompress.compressedFile(source).withDeflate().to(destination);
@@ -245,48 +236,44 @@ Decompress.compressedFile(source).withDeflate().to(destination);
 Decompress.compressedFile(source).withDeflate()//
   .andParameters(new DeflateParameters())//
   .to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="dump">dump</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Dump_(program)">https://en.wikipedia.org/wiki/Dump_(program)</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-dump'}">
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-dump" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="dump">dump</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Dump_(program)">https://en.wikipedia.org/wiki/Dump_(program)</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-dump'}">
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-dump" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test.dump");
 File destination = new File("test");
 Decompress.archive(source).withDump().to(destination);
 
 Decompress.archive(source).withDump().andEncoding("UTF16").to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="gzip">gzip</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Gzip">https://en.wikipedia.org/wiki/Gzip</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-gzip'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-gzip" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="gzip">gzip</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Gzip">https://en.wikipedia.org/wiki/Gzip</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-gzip'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-gzip" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt");
 File destination = new File("test.txt.gz");
 Compress.file(source).withGzip().to(destination);
@@ -294,10 +281,10 @@ Compress.file(source).withGzip().to(destination);
 Compress.file(source).withGzip()//
   .andParameters(new GzipParameters())//
   .to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt.gz");
 File destination = new File("test.txt");
 Decompress.compressedFile(source).withGzip().to(destination);
@@ -305,25 +292,23 @@ Decompress.compressedFile(source).withGzip().to(destination);
 Decompress.compressedFile(source).withGzip()//
   .andDecompressConcatenated(true)//
   .to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="jar">jar</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/JAR_(file_format)">https://en.wikipedia.org/wiki/JAR_(file_format)</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-jar'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-jar" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="jar">jar</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/JAR_(file_format)">https://en.wikipedia.org/wiki/JAR_(file_format)</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-jar'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-jar" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test");
 File destination = new File("test.jar");
 Compress.directory(source).withJar().to(destination);
@@ -338,10 +323,10 @@ Compress.directory(source).withJar()//
   .andUseLanguageEncoding(true)//
   .andZip64Mode(Zip64Mode.ALWAYS)//
   .to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.jar");
 File destination = new File("test");
 Decompress.archive(source).withJar().to(destination);
@@ -349,54 +334,50 @@ Decompress.archive(source).withJar().to(destination);
 Decompress.archive(source).withJar()//
   .andEncoding("UTF16")//
   .to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="lzma">lzma</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Markov_chain_algorithm">https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Markov_chain_algorithm</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-lzma'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-lzma" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="lzma">lzma</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Markov_chain_algorithm">https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Markov_chain_algorithm</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-lzma'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-lzma" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt");
 File destination = new File("test.txt.lzma");
 Compress.file(source).withLzma().to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt.lzma");
 File destination = new File("test.txt");
 Decompress.compressedFile(source).withLzma().to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="pack200">pack200</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Pack200">https://en.wikipedia.org/wiki/Pack200</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-pack200'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-pack200" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="pack200">pack200</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Pack200">https://en.wikipedia.org/wiki/Pack200</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-pack200'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-pack200" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt");
 File destination = new File("test.txt.pack");
 Compress.file(source).withPack200().to(destination);
@@ -405,10 +386,10 @@ Compress.file(source).withPack200()//
   .andMode(Pack200Strategy.TEMP_FILE)//
   .andProperties(new HashMap&lt;String, String&gt;())//
   .to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt.pack");
 File destination = new File("test.txt");
 Decompress.compressedFile(source).withPack200().to(destination);
@@ -417,25 +398,23 @@ Decompress.compressedFile(source).withPack200()//
   .andMode(Pack200Strategy.TEMP_FILE)//
   .andProperties(new HashMap&lt;String, String&gt;())//
   .to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="snappy">snappy</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Snappy_(compression)">https://en.wikipedia.org/wiki/Snappy_(compression)</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-snappy'}">
-          <li><a href="">Decompression (standard snappy)</a></li>
-          <li><a href="">Decompression (framed snappy)</a></li>
-        </ul>
-        <ul id="tab-snappy" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="snappy">snappy</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Snappy_(compression)">https://en.wikipedia.org/wiki/Snappy_(compression)</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-snappy'}">
+        <li><a href="">Decompression (standard snappy)</a></li>
+        <li><a href="">Decompression (framed snappy)</a></li>
+      </ul>
+      <ul id="tab-snappy" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt.sz");
 File destination = new File("test.txt");
 Decompress.compressedFile(source).withSnappy().to(destination);
@@ -443,35 +422,33 @@ Decompress.compressedFile(source).withSnappy().to(destination);
 Decompress.compressedFile(source).withSnappy()//
   .andBlockSize(SnappyCompressorInputStream.DEFAULT_BLOCK_SIZE)//
   .to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt.sz");
 File destination = new File("test.txt");
 FramedSnappyDialect dialect = FramedSnappyDialect.IWORK_ARCHIVE;
 Decompress.compressedFile(source).withFramedSnappy()//
   .andDialect(FramedSnappyDialect.IWORK_ARCHIVE)//
   .to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="tar">tar</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Tar_(computing)">https://en.wikipedia.org/wiki/Tar_(computing)</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-tar'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-tar" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="tar">tar</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Tar_(computing)">https://en.wikipedia.org/wiki/Tar_(computing)</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-tar'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-tar" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test");
 File destination = new File("test.tar");
 Compress.directory(source).withTar().to(destination);
@@ -485,10 +462,10 @@ Compress.directory(source).withTar()//
   .andPreserveLeadingSlashes(true)//
   .andRecordSize(TarConstants.DEFAULT_RCDSIZE)//
   .to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.tar");
 File destination = new File("test");
 Decompress.archive(source).withTar()//
@@ -496,79 +473,73 @@ Decompress.archive(source).withTar()//
   .andEncoding("UTF8")//
   .andRecordSize(TarConstants.DEFAULT_RCDSIZE)//
   .to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="xz">xz</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Xz">https://en.wikipedia.org/wiki/Xz</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-xz'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-xz" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="xz">xz</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Xz">https://en.wikipedia.org/wiki/Xz</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-xz'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-xz" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt");
 File destination = new File("test.txt.xz");
 Compress.file(source).withXz().to(destination);
 
 Compress.file(source).withXz().andPreset(LZMA2Options.PRESET_MAX).to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt.xz");
 File destination = new File("test.txt");
 Decompress.compressedFile(source).withXz().to(destination);
 
 Decompress.compressedFile(source).withXz().andDecompressConcatenated(true).to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="z">z</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Compress">https://en.wikipedia.org/wiki/Compress</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-z'}">
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-z" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="z">z</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Compress">https://en.wikipedia.org/wiki/Compress</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-z'}">
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-z" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test.txt.z");
 File destination = new File("test.txt");
 Decompress.compressedFile(source).withZ().to(destination);
-            </code></pre>
-          </li>
-        </ul>
+          </code></pre>
+        </li>
+      </ul>
 
-        <hr/>
-      </div>
+      <hr/>
 
-      <div>
-        <h2 class="uk-margin-bottom-remove" id="zip">zip</h2>
-        <p class="uk-margin-top-remove">
-          See <a href="https://en.wikipedia.org/wiki/Zip_(file_format)">https://en.wikipedia.org/wiki/Zip_(file_format)</a>.
-        </p>
-        <ul class="uk-tab" data-uk-tab="{connect: '#tab-zip'}">
-          <li><a href="">Compression</a></li>
-          <li><a href="">Decompression</a></li>
-        </ul>
-        <ul id="tab-zip" class="uk-switcher">
-          <li>
-            <pre><code class="java">
+      <h2 id="zip">zip</h2>
+      <p>
+        See <a href="https://en.wikipedia.org/wiki/Zip_(file_format)">https://en.wikipedia.org/wiki/Zip_(file_format)</a>.
+      </p>
+      <ul class="uk-tab" data-uk-tab="{connect: '#tab-zip'}">
+        <li><a href="">Compression</a></li>
+        <li><a href="">Decompression</a></li>
+      </ul>
+      <ul id="tab-zip" class="uk-switcher">
+        <li>
+          <pre><code class="java">
 File source = new File("test");
 File destination = new File("test.zip");
 Compress.directory(source).withZip().to(destination);
@@ -583,10 +554,10 @@ Compress.directory(source).withZip()//
   .andUseLanguageEncoding(true)//
   .andZip64Mode(Zip64Mode.ALWAYS)//
   .to(destination);
-            </code></pre>
-          </li>
-          <li>
-            <pre><code class="java">
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="java">
 File source = new File("test.zip");
 File destination = new File("test");
 Decompress.archive(source).withZip().to(destination);
@@ -596,10 +567,9 @@ Decompress.archive(source).withZip()//
   .andEncoding("UTF16")//
   .andUseUnicodeExtraFields(false)//
   .to(destination);
-            </code></pre>
-          </li>
-        </ul>
-      </div>
+          </code></pre>
+        </li>
+      </ul>
 
     </article>
   </div>
@@ -611,8 +581,6 @@ Decompress.archive(source).withZip()//
         <li *ngFor="let compressFileType of compressFileTypes">
           <a href="#{{compressFileType.fileType}}">{{compressFileType.fileType}}</a>
         </li>
-        <li class="uk-nav-divider"></li>
-        <li><a href="https://github.com/alanbuttars/commons-java/tree/master/commons-compress" target="_blank"><i class="uk-icon-github"></i></a></li>
       </ul>
     </div>
   </div>

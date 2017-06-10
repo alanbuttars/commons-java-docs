@@ -5,7 +5,7 @@ export const RELEASES = [
   {
     name: "1.0",
     date: "June 1, 2017",
-    notes: "None",
+    notes: "Requires Java 1.7+",
     bugs: "None",
     downloads: [
       {
