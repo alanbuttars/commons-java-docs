@@ -36,7 +36,11 @@ $color-2: #f2b632;
 $color-3: #677077;
 $color-4: #252839;
 
-$navbar-nav-height:           50px !default;
+$navbar-nav-height:             50px !default;
+$navbar-nav-font-size:          18px !default;
+$navbar-nav-hover-background:   inherit !default;
+$navbar-nav-onclick-background: inherit !default;
+
 $navbar-background:           $color-1 !default;
 
 $nav-side-hover-background:   $color-1 !default;

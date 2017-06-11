@@ -4,4 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-footer',
   templateUrl: './footer.component.html'
 })
-export class FooterComponent { }
+export class FooterComponent {
+  formattedYear = 2016 == new Date().getFullYear() ? 2016 : 2016 + "-" + new Date().getFullYear();
+}
