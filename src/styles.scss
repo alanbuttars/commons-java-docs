@@ -69,7 +69,7 @@ $base-pre-border:                                solid $tab-border-width $tab-ac
 
 $base-code-font-size:                            inherit !default;
 
-article > {
+article {
   h2,h3 {
     @extend .uk-margin-large-top;
     @extend .uk-margin-bottom;
@@ -106,3 +106,4 @@ pre {
 
 @import "assets/bower_components/uikit/scss/core/article.scss";
 @import "assets/bower_components/uikit/scss/core/icon.scss";
+@import "assets/bower_components/uikit/scss/core/table.scss";

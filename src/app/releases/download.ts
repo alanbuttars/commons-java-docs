@@ -1,4 +1,6 @@
 export class Download {
-  name: string;
-  hash: string;
+  module: string;
+  suffix: string;
+  md5: string;
+  sha1: string;
 }

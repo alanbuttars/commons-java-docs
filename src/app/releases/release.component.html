@@ -1,37 +1,53 @@
-<p>
-  All Commons modules may be installed via Maven, Gradle, or by manually downloading the JAR.
-</p>
-
-<h3>Maven</h3>
+<h2>Maven</h2>
 <pre><code class="xml">
 &lt;dependency&gt;
   &lt;groupId&gt;com.alanbuttars.commons&lt;/groupId&gt;
-  &lt;artifactId&gt;commons&lt;/artifactId&gt;
+  &lt;artifactId&gt;commons-cli&lt;/artifactId&gt;
+  &lt;version&gt;{{release.name}}&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+  &lt;groupId&gt;com.alanbuttars.commons&lt;/groupId&gt;
+  &lt;artifactId&gt;commons-compress&lt;/artifactId&gt;
+  &lt;version&gt;{{release.name}}&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+  &lt;groupId&gt;com.alanbuttars.commons&lt;/groupId&gt;
+  &lt;artifactId&gt;commons-config&lt;/artifactId&gt;
   &lt;version&gt;{{release.name}}&lt;/version&gt;
 &lt;/dependency&gt;
 
 </code></pre>
 
+<hr/>
+
+<!--
 <h3>Gradle</h3>
 <pre><code class="gradle">
 compile group: 'com.alanbuttars.commons', name: 'commons', version: '{{release.name}}'
 
 </code></pre>
 
-<h3>Manual downloads</h3>
-<table class="uk-table">
+<hr/>
+-->
+
+<h2>Manual downloads</h2>
+<table class="uk-table uk-table-hover">
   <thead>
     <tr>
       <th>Name</th>
-      <th>SHA-512</th>
+      <th>md5</th>
+      <th>sha1</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let download of release.downloads">
-      <td>{{download.name}}</td>
-      <td>{{download.hash}}</td>
-      <td><a class="uk-icon-download" target="_blank" href="downloads/{{release.name}}/{{download.name}}"></a></td>
+      <td>{{download.module}}-{{release.name}}{{download.suffix}}</td>
+      <td>{{download.md5}}</td>
+      <td>{{download.sha1}}</td>
+      <td><a class="uk-icon-download" target="_blank" href="https://repo1.maven.org/maven2/com/alanbuttars/commons/{{download.module}}/{{release.name}}/{{download.module}}-{{release.name}}{{download.suffix}}"></a></td>
     </tr>
   </tbody>
 </table>
