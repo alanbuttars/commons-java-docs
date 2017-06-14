@@ -37,16 +37,16 @@ compile group: 'com.alanbuttars.commons', name: 'commons', version: '{{release.n
   <thead>
     <tr>
       <th>Name</th>
-      <th>md5</th>
-      <th>sha1</th>
+      <th class="uk-hidden-small">md5</th>
+      <th class="uk-hidden-small">sha1</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let download of release.downloads">
       <td>{{download.module}}-{{release.name}}{{download.suffix}}</td>
-      <td>{{download.md5}}</td>
-      <td>{{download.sha1}}</td>
+      <td class="uk-hidden-small">{{download.md5}}</td>
+      <td class="uk-hidden-small">{{download.sha1}}</td>
       <td><a class="uk-icon-download" target="_blank" href="https://repo1.maven.org/maven2/com/alanbuttars/commons/{{download.module}}/{{release.name}}/{{download.module}}-{{release.name}}{{download.suffix}}"></a></td>
     </tr>
   </tbody>
