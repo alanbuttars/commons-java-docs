@@ -5,6 +5,7 @@ import { CompressFileType } from './compress-file-type';
 
 declare var $: any;
 declare var hljs: any;
+declare var ga: any;
 
 @Component({
   selector: 'app-compress',
@@ -28,6 +29,8 @@ export class CompressModuleComponent implements OnInit {
     $('pre code').each(function(i, block) {
       hljs.highlightBlock(block);
     });
+    ga('create', 'UA-52727032-2', 'auto');
+    ga('send', 'pageview');
   }
 
   getFileType(fileType): CompressFileType {
