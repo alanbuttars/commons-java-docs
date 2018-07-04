@@ -33,6 +33,7 @@ src/.sass-cache
 npm-debug.log
 testem.log
 /typings
+*.swp
 
 # e2e
 /e2e/*.js
